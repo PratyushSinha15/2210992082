@@ -1,7 +1,6 @@
-// Configuration file for server and API base URL
-
 module.exports = {
-    apiBaseUrl: 'http://20.244.56.144/evaluation-service',
-    port: 3000
+    
+    apiBaseUrl: 'https://your-api-url.com',
+    apiToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzQ0NzA0MTAzLCJpYXQiOjE3NDQ3MDM4MDMsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6IjNkNGRmZTRhLTllODktNGQwNS1iZWRmLWYwN2Q5MTFjYTA3OSIsInN1YiI6InByYXR5dXNoMjA4Mi5iZTIyQGNoaXRrYXJhLmVkdS5pbiJ9LCJlbWFpbCI6InByYXR5dXNoMjA4Mi5iZTIyQGNoaXRrYXJhLmVkdS5pbiIsIm5hbWUiOiJwcmF0eXVzaCBrdW1hciIsInJvbGxObyI6IjIyMTA5OTIwODIiLCJhY2Nlc3NDb2RlIjoiUHd6dWZHIiwiY2xpZW50SUQiOiIzZDRkZmU0YS05ZTg5LTRkMDUtYmVkZi1mMDdkOTExY2EwNzkiLCJjbGllbnRTZWNyZXQiOiJLeHdkZ1hhUGR4ZmdxbVlCIn0.p3YKffpKwaql_tIcR7Ok4PRqJXFBs2hA_yKiPrGPPnY',
   };
   

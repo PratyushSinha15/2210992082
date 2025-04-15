@@ -1,13 +1,25 @@
-const { getPosts } = require('../services/postService');
+const { getTopUsers, getPosts } = require('../services/postService');
 
-async function getPostsData(req, res) {
-  const { type } = req.query;
+async function getTopUsersHandler(req, res) {
   try {
-    const posts = await getPosts(type);
-    res.json(posts);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch posts.' });
+    const data = await getTopUsers();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch top users' });
   }
 }
 
-module.exports = { getPostsData };
+async function getPostsHandler(req, res) {
+  try {
+    const { type } = req.query;
+    const data = await getPosts(type);
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch posts' });
+  }
+}
+
+module.exports = {
+  getTopUsersHandler,
+  getPostsHandler,
+};

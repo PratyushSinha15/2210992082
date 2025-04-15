@@ -1,4 +1,5 @@
 const { fetchData } = require('./apiService');
+const { apiBaseUrl } = require('../config/config');
 
 async function getUsers() {
   const usersData = await fetchData(`${apiBaseUrl}/users`);
@@ -15,4 +16,8 @@ async function getPostComments(postId) {
   return commentsData ? commentsData.comments : [];
 }
 
-module.exports = { getUsers, getUserPosts, getPostComments };
+module.exports = {
+  getUsers,
+  getUserPosts,
+  getPostComments,
+};

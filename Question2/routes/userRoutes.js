@@ -1,7 +1,9 @@
 const express = require('express');
-const { topUsers } = require('../controllers/userController');
+const { getAllUsersHandler, getUserPostsHandler, getPostCommentsHandler } = require('../controllers/userController');
 const router = express.Router();
 
-router.get('/users', topUsers);
+router.get('/', getAllUsersHandler);
+router.get('/:userId/posts', getUserPostsHandler);
+router.get('/posts/:postId/comments', getPostCommentsHandler);
 
 module.exports = router;

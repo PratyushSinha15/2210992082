@@ -1,7 +1,8 @@
 const express = require('express');
-const { getPostsData } = require('../controllers/postController');
+const { getTopUsersHandler, getPostsHandler } = require('../controllers/postController');
 const router = express.Router();
 
-router.get('/posts', getPostsData);
+router.get('/top-users', getTopUsersHandler);
+router.get('/posts', getPostsHandler);
 
 module.exports = router;

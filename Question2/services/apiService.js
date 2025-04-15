@@ -1,12 +1,16 @@
 const axios = require('axios');
-const { apiBaseUrl } = require('../config/config');
+const { apiToken } = require('../config/config');
 
-async function fetchData(url) {
+async function fetchData(endpoint) {
   try {
-    const response = await axios.get(url);
+    const response = await axios.get(endpoint, {
+      headers: {
+        Authorization: `Bearer ${apiToken}`,
+      },
+    });
     return response.data;
   } catch (error) {
-    console.error(error);
+    console.error(`Error fetching data from ${endpoint}:`, error.message);
     return null;
   }
 }

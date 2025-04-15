@@ -23,7 +23,7 @@ async function getTopUsers() {
   return sortedUsers.map(userId => ({
     userId,
     userName: users[userId],
-    commentCount: userCommentsCount[userId]
+    commentCount: userCommentsCount[userId],
   }));
 }
 
@@ -47,7 +47,7 @@ async function getPosts(type) {
 
   if (type === 'popular') {
     posts.sort((a, b) => b.commentCount - a.commentCount);
-    const maxComments = posts[0].commentCount;
+    const maxComments = posts[0]?.commentCount || 0;
     return posts.filter(post => post.commentCount === maxComments);
   } else if (type === 'latest') {
     posts.sort((a, b) => b.createdAt - a.createdAt);
@@ -57,4 +57,7 @@ async function getPosts(type) {
   }
 }
 
-module.exports = { getTopUsers, getPosts };
+module.exports = {
+  getTopUsers,
+  getPosts,
+};
